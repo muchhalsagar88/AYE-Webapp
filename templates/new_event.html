@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block body %}
+	<h2>Create an event</h2>
+	{% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+
+	<form class="form-horizontal" action="{{ url_for('create_new_event') }}" method="post">
+  		<div class="form-group">
+		    <label for="event_name" class="col-sm-2 control-label">Event name</label>
+		    <div class="col-sm-8">
+		    	<input id="event_name" class="form-control" type="text"
+		    		name="event_name" placeholder="Give a cool name" />
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    <label for="event_desc" class="col-sm-2 control-label">Event Description</label>
+		    <div class="col-sm-8">
+		    	<textarea class="form-control" rows="3" id="event_desc"
+		    		name="event_desc" placeholder="Include a kick ass description!"></textarea>
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-8">
+		      <button type="submit" class="btn btn-primary" onclick="create_event()" >Create event</button>
+		    </div>
+	  	</div>
+
+	  	<input type="hidden" id="position_lat" name="position_lat" />
+	  	<input type="hidden" id="position_long" name="position_long" />
+  	</form>
+{% endblock %}
