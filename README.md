@@ -1,2 +1,2 @@
 # AYE-Webapp
-Flask applicatiokn
+Flask application
